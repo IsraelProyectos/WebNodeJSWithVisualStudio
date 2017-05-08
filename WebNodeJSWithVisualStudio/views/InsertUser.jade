@@ -1,0 +1,15 @@
+﻿extends layout
+
+block content
+    h3 #{message}
+    form(method = "post", action = "/signup")
+     p Nombre
+      input(type = "text", name = "name")
+     p Primer Apellido
+      input(type = "text", name = "apellido1")
+     p Segundo Apellido
+      input(type = "text", name = "apellido2")
+     p
+      input(type = "submit")
+     
+       

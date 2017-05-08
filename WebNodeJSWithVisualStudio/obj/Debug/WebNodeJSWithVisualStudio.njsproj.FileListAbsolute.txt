@@ -1,0 +1,1 @@
+C:\WebNodeJSWithVisualStudio\WebNodeJSWithVisualStudio\bin\Microsoft.NodejsTools.WebRole.dll

@@ -1,0 +1,22 @@
+﻿extends layout
+
+block content
+   
+   div.row(class = "table-responsive")
+     table(class = "table table-striped table-bordered table-hover")
+
+       thead
+         tr
+           th Nombre
+           th Primer apellido
+           th Segundo apellido
+
+       tbody
+         each user in myUsers   
+           tr
+             td
+                           |#{user.nombre}
+             td 
+                           |#{user.apellido1}
+             td
+                           |#{user.apellido2}        
