@@ -5,6 +5,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title #{title} - My Express Application
     link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.css')
     link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
     script(src='/javascripts/modernizr-2.6.2.js')
   body
@@ -18,22 +19,22 @@ html
           a.navbar-brand(href='/') Application name
         .navbar-collapse.collapse
           ul.nav.navbar-nav
+            //li
+             // a(href='/') Home
+            //li
+             // a(href='/about') About
+            //li
+              //a(href='/contact') Contact
             li
-              a(href='/') Home
+              a(href='/UsersList') Lista de Usuarios
             li
-              a(href='/about') About
-            li
-              a(href='/contact') Contact
-            li
-              a(href='/UsersList') Users List
-            li
-              a(href='/InsertUser') Insert User
+              a(href='/InsertUser') Registrar Usuario
             
     .container.body-content
       block content
       hr
       footer
-        p &copy; #{year} - My Express Application
+        p &copy; #{year} - Israel Puyol Soriano
 
     script(src='/javascripts/jquery-1.10.2.js')
     script(src='/javascripts/bootstrap.js')

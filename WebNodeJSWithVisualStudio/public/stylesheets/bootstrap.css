@@ -445,8 +445,22 @@ cite {
   color: #468847;
 }
 
+.text-rede {
+  color: green;
+  font-style: italic;
+}
+
 .text-info {
   color: #3a87ad;
+}
+
+.centrarElementosDiv {
+    float: left;
+    width: 50%;
+}
+
+.alinearDivDerecha {
+    float: right;
 }
 
 .text-left {
@@ -473,7 +487,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   font-weight: 500;
   line-height: 1.1;
 }

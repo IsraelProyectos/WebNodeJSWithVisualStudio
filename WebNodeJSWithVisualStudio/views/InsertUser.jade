@@ -2,18 +2,19 @@
 
 block content
     h3 #{message}
-    div
+    div.centrarElementosDiv
+      div
         form(method = "post", action = "/signup")
-         p Nombre
-          input(type = "text", name = "name")
-          span #{msgNombre}
-         p Primer Apellido
+         p Nombre <br>
+          input(type = "text", name = "name") 
+          span.text-danger #{msgNombre}
+         p Primer Apellido <br>
           input(type = "text", name = "apellido1")
-          span #{msgApellido1}
-         p Segundo Apellido
-          input(type = "text", name = "apellido2")
-          span #{msgApellido2}
+          span.text-danger #{msgApellido1}
+         p Segundo Apellido <br>
+          input(type = "text", name = "apellido2") 
+          span.text-danger #{msgApellido2}
          p
-          input(type = "submit" value = "Insertar")
-    div hola 
+          input(type = "submit" value = "Enviar")
+    div.centrarElementosDiv hola 
        
