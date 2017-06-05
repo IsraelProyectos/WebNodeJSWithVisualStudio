@@ -60,10 +60,9 @@ app.post('/signup', function (req, res) {
     var name = req.body.name;
     var apellido1 = req.body.apellido1;
     var apellido2 = req.body.apellido2;
-    var nombreSpan = req.body.nombreSpan;
     
-    if ((name === '') || (apellido1 === '') || (apellido2 === '')) { 
-     
+    if ((name === '') && (apellido1 === '') && (apellido2 === '')) {
+        
         //body.nombreSpan.contentText = 'faltan campos';
         //res.body.nombreSpan.send('faltan campos');
         //console.log('faltan campos');
@@ -74,7 +73,56 @@ app.post('/signup', function (req, res) {
             msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
             year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
         });
-
+    }else if ((apellido1 === '') && (name === '')) {
+        
+        res.render('InsertUser', {
+            msgNombre: ' El campo Nombre no puede estar vacio', 
+            msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
+            //msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
+            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+        });
+    }else if ((apellido2 === '') && (name === '')) {
+        
+        res.render('InsertUser', {
+            msgNombre: ' El campo Nombre no puede estar vacio', 
+            //msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
+            msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
+            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+        });
+    }else if ((apellido2 === '') && (apellido1 === '')) {
+        res.body.name.innerText = name;
+        res.render('InsertUser', {
+            //msgNombre: ' El campo Nombre no puede estar vacio', 
+            msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
+            msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
+            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+        });
+    }else if ((apellido2 === '')) {
+        
+        res.render('InsertUser', {
+            //msgNombre: ' El campo Nombre no puede estar vacio', 
+            //msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
+            msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
+            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+        });
+    
+    } else if ((name === '')) {
+        
+        res.render('InsertUser', {
+            msgNombre: ' El campo Nombre no puede estar vacio', 
+            //msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
+            //msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
+            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+        });
+    
+    } else if ((apellido1 === '')) {
+        
+        res.render('InsertUser', {
+            //msgNombre: ' El campo Nombre no puede estar vacio', 
+            msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
+            //msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
+            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+        });         
     } else {
 
        userDao.UsersDao.insertUsers(name, apellido1, apellido2);
