@@ -1,20 +1,30 @@
 ﻿extends layout
 
 block content
-    h3 #{message}
+ body.text-center
+  div.container
+    div.text-center
+     h3 #{message}
+    //div.divLaterales 
     div.centrarElementosDiv
       div
         form(method = "post", action = "/signup")
          p Nombre <br>
-          input(type = "text", name = "name") 
+          input(type = "text", name = "name")
+          <br> 
           span.text-danger #{msgNombre}
+          <br>
          p Primer Apellido <br>
           input(type = "text", name = "apellido1")
+          <br>
           span.text-danger #{msgApellido1}
+          <br>
          p Segundo Apellido <br>
-          input(type = "text", name = "apellido2") 
+          input(type = "text", name = "apellido2")
+          <br> 
           span.text-danger #{msgApellido2}
+          <br>
          p
           input(type = "submit" value = "Enviar")
-    div.centrarElementosDiv hola 
-       
+    //div.divLaterales  
+  div.container    

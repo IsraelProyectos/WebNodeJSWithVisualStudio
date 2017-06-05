@@ -456,8 +456,23 @@ cite {
 
 .centrarElementosDiv {
     float: left;
-    width: 50%;
+    width: 33.3%;
+    /*background-color: #D9FFC6;*/
+    padding: 1%;
+    border-style: double;
+    border-color: black;
+    margin-left: 33%;
+    margin-right: 33%;
+    
 }
+
+.divLaterales {
+    float: left;
+    width: 1000px;
+    border-style: hidden;
+}
+
+
 
 .alinearDivDerecha {
     float: right;
