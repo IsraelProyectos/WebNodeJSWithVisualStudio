@@ -10,7 +10,7 @@ block content
       div
         form(method = "post", action = "/signup")
          p Nombre <br>
-          input(type = "text", name = "name")
+          input(type = "text", name = "name" value = '#{messageNombreNull}')
           <br> 
           span.text-danger #{msgNombre}
           <br>

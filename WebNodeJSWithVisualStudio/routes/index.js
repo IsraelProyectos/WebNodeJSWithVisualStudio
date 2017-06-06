@@ -34,6 +34,7 @@ exports.UsersList = function (req, res) {
 
 exports.InsertUser = function (req, res) {
 
-    res.render('InsertUser', {year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'});
+    res.render('InsertUser', { year: new Date().getFullYear(), message: 'Introduce un nuevo usuario' , messageNombreNull: ''});
+    
    
 };

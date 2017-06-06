@@ -68,6 +68,7 @@ app.post('/signup', function (req, res) {
         //console.log('faltan campos');
         //res.name.send('hola');
         res.render('InsertUser', {
+            messageNombreNull: "",
             msgNombre: ' El campo Nombre no puede estar vacio', 
             msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
             msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
@@ -84,15 +85,16 @@ app.post('/signup', function (req, res) {
     }else if ((apellido2 === '') && (name === '')) {
         
         res.render('InsertUser', {
+            messageNombreNull: "",
             msgNombre: ' El campo Nombre no puede estar vacio', 
             //msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
             msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
             year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
         });
     }else if ((apellido2 === '') && (apellido1 === '')) {
-        res.body.name.innerText = name;
+        
         res.render('InsertUser', {
-            //msgNombre: ' El campo Nombre no puede estar vacio', 
+            messageNombreNull: name, 
             msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
             msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
             year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
@@ -136,7 +138,7 @@ app.post('/signup', function (req, res) {
     //        errors: {}
     //    });
         
-    res.render('InsertUser', { year: new Date().getFullYear(), message: 'Introduce un nuevo usuario' });
+    res.render('InsertUser', { year: new Date().getFullYear(), message: 'Introduce un nuevo usuario', messageNombreNull: "" });
     
        
     //}
