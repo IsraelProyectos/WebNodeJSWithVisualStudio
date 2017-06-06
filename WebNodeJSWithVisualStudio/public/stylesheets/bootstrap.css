@@ -445,9 +445,9 @@ cite {
   color: #468847;
 }
 
-.text-rede {
+.text-red {
   color: green;
-  font-style: italic;
+  font-weight: bold;
 }
 
 .text-info {
@@ -503,7 +503,7 @@ h6,
 .h5,
 .h6 {
   font-family: sans-serif;
-  font-weight: 500;
+  /*font-weight: 500;*/
   line-height: 1.1;
 }
 
