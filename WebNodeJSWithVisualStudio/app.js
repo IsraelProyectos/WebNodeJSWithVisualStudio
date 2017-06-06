@@ -69,76 +69,90 @@ app.post('/signup', function (req, res) {
         //res.name.send('hola');
         res.render('InsertUser', {
             messageNombreNull: "",
+            messageApellido1Null: "",
+            messageApellido2Null: "",
             msgNombre: ' El campo Nombre no puede estar vacio', 
             msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
             msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
-            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+            year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });
     }else if ((apellido1 === '') && (name === '')) {
         
         res.render('InsertUser', {
+            messageNombreNull: "",
+            messageApellido1Null: "",
+            messageApellido2Null: apellido2,
             msgNombre: ' El campo Nombre no puede estar vacio', 
             msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
             //msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
-            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+            year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });
     }else if ((apellido2 === '') && (name === '')) {
         
         res.render('InsertUser', {
             messageNombreNull: "",
+            messageApellido1Null: apellido1,
+            messageApellido2Null: "",
             msgNombre: ' El campo Nombre no puede estar vacio', 
             //msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
             msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
-            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+            year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });
     }else if ((apellido2 === '') && (apellido1 === '')) {
         
         res.render('InsertUser', {
-            messageNombreNull: name, 
+            messageNombreNull: name,
+            messageApellido1Null: "",
+            messageApellido2Null: "", 
             msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
             msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
-            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+            year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });
     }else if ((apellido2 === '')) {
         
         res.render('InsertUser', {
+            messageNombreNull: name,
+            messageApellido1Null: apellido1,
+            messageApellido2Null: "",
             //msgNombre: ' El campo Nombre no puede estar vacio', 
             //msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
             msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
-            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+            year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });
     
     } else if ((name === '')) {
         
         res.render('InsertUser', {
+            messageNombreNull: "",
+            messageApellido1Null: apellido1,
+            messageApellido2Null: apellido2,
             msgNombre: ' El campo Nombre no puede estar vacio', 
             //msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
             //msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
-            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+            year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });
     
     } else if ((apellido1 === '')) {
         
         res.render('InsertUser', {
+            messageNombreNull: name,
+            messageApellido1Null: "",
+            messageApellido2Null: apellido2,
             //msgNombre: ' El campo Nombre no puede estar vacio', 
             msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
             //msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
-            year: new Date().getFullYear(), message: 'Introduce un nuevo usuario'
+            year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });         
     } else {
 
-       userDao.UsersDao.insertUsers(name, apellido1, apellido2);
+        userDao.UsersDao.insertUsers(name, apellido1, apellido2);
+        res.render('InsertUser', {
+            year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO', 
+            messageNombreNull: "", 
+            messageApellido1Null: "", 
+            messageApellido2Null: ""
+        });
     }
-
-    //var errors = req.validationErrors();
-    //if (!errors) {
-    //    res.render('InsertUser', {
-    //        title: 'Validacion de Formulario',
-    //        message: '',
-    //        errors: {}
-    //    });
-        
-    res.render('InsertUser', { year: new Date().getFullYear(), message: 'Introduce un nuevo usuario', messageNombreNull: "" });
     
        
     //}
