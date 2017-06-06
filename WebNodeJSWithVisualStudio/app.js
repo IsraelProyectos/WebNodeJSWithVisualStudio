@@ -4,8 +4,8 @@
  */
 
 var express = require('express');
-var expressValidator = require('express-validator');
-var assert_request = require('assert-request');
+//var expressValidator = require('express-validator');
+//var assert_request = require('assert-request');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
@@ -21,13 +21,13 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.bodyParser());
+//app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(expressValidator);
-app.use(assert_request);
+//app.use(expressValidator);
+//app.use(assert_request);
 
 // development only
 if ('development' == app.get('env')) {
@@ -41,13 +41,13 @@ app.get('/', routes.UsersList);
 app.get('/UsersList', routes.UsersList);
 app.get('/InsertUser', routes.InsertUser);
 
-app.get('/InsertUser', function (req, res) {
-    res.render('InsertUser', {
-        title: 'Ejemplo de validación de formulario',
-        message: '',
-        errors: {}
-    });
-});
+//app.get('/InsertUser', function (req, res) {
+    //res.render('InsertUser', {
+        //title: 'Ejemplo de validación de formulario',
+        //message: '',
+        //errors: {}
+    //});
+//});
 
 app.post('/signup', function (req, res) {
     
@@ -71,9 +71,9 @@ app.post('/signup', function (req, res) {
             messageNombreNull: "",
             messageApellido1Null: "",
             messageApellido2Null: "",
-            msgNombre: ' El campo Nombre no puede estar vacio', 
-            msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
-            msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
+            msgNombre: ' El campo Nombre no puede estar vacío', 
+            msgApellido1: ' El campo Primer Apellido no puede estar vacío', 
+            msgApellido2: ' El campo Segundo Apellido no puede estar vacío',
             year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });
     }else if ((apellido1 === '') && (name === '')) {
@@ -82,8 +82,8 @@ app.post('/signup', function (req, res) {
             messageNombreNull: "",
             messageApellido1Null: "",
             messageApellido2Null: apellido2,
-            msgNombre: ' El campo Nombre no puede estar vacio', 
-            msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
+            msgNombre: ' El campo Nombre no puede estar vacío', 
+            msgApellido1: ' El campo Primer Apellido no puede estar vacío', 
             //msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
             year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });
@@ -93,9 +93,9 @@ app.post('/signup', function (req, res) {
             messageNombreNull: "",
             messageApellido1Null: apellido1,
             messageApellido2Null: "",
-            msgNombre: ' El campo Nombre no puede estar vacio', 
+            msgNombre: ' El campo Nombre no puede estar vacío', 
             //msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
-            msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
+            msgApellido2: ' El campo Segundo Apellido no puede estar vacío',
             year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });
     }else if ((apellido2 === '') && (apellido1 === '')) {
@@ -104,8 +104,8 @@ app.post('/signup', function (req, res) {
             messageNombreNull: name,
             messageApellido1Null: "",
             messageApellido2Null: "", 
-            msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
-            msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
+            msgApellido1: ' El campo Primer Apellido no puede estar vacío', 
+            msgApellido2: ' El campo Segundo Apellido no puede estar vacío',
             year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });
     }else if ((apellido2 === '')) {
@@ -116,7 +116,7 @@ app.post('/signup', function (req, res) {
             messageApellido2Null: "",
             //msgNombre: ' El campo Nombre no puede estar vacio', 
             //msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
-            msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
+            msgApellido2: ' El campo Segundo Apellido no puede estar vacío',
             year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });
     
@@ -126,7 +126,7 @@ app.post('/signup', function (req, res) {
             messageNombreNull: "",
             messageApellido1Null: apellido1,
             messageApellido2Null: apellido2,
-            msgNombre: ' El campo Nombre no puede estar vacio', 
+            msgNombre: ' El campo Nombre no puede estar vacío', 
             //msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
             //msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
             year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
@@ -139,7 +139,7 @@ app.post('/signup', function (req, res) {
             messageApellido1Null: "",
             messageApellido2Null: apellido2,
             //msgNombre: ' El campo Nombre no puede estar vacio', 
-            msgApellido1: ' El campo Primer Apellido no puede estar vacio', 
+            msgApellido1: ' El campo Primer Apellido no puede estar vacío', 
             //msgApellido2: ' El campo Segundo Apellido no puede estar vacio',
             year: new Date().getFullYear(), message: 'INTRODUCE UN NUEVO USUARIO'
         });         
